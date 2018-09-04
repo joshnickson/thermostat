@@ -12,5 +12,13 @@ describe("Thermostat", function() {
     });
   });
 
+  describe("Down", function() {
+    it("should increase temperature", function() {
+      thermostat.down(10)
+      expect(thermostat.temperature).toEqual(10)
+    });
+  });
+
+
 });
 
