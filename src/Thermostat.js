@@ -1,10 +1,9 @@
 function Thermostat() {
   this.temperature = 20;
-  this.powerSave = DEFAULT;
+  this.powerSave = 'on';
 };
 
 var powerSave;
-DEFAULT = 'on';
 
 Thermostat.prototype.up = function(raiseBy) {
   this._setMaxTemp(powerSave);
@@ -13,6 +12,10 @@ Thermostat.prototype.up = function(raiseBy) {
 
 Thermostat.prototype.down = function(reduceBy) {
   this.temperature = Math.max(this.temperature - reduceBy, 10)
+};
+
+Thermostat.prototype.reset = function() {
+  this.temperature = 20;
 };
 
 Thermostat.prototype._setMaxTemp = function() {
