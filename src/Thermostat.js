@@ -14,14 +14,18 @@ Thermostat.prototype.down = function(reduceBy) {
   this.temperature = Math.max(this.temperature - reduceBy, 10)
 };
 
-Thermostat.prototype.reset = function() {
+Thermostat.prototype.resetTemp = function() {
   this.temperature = 20;
 };
 
+Thermostat.prototype.energyUsage = function() {
+  if(this.temperature < 18) {
+    return 'low-usage';
+  } else if (this.temperature < 25) {
+    return 'medium-usage'; 
+  } else return 'high-usage';
+};
+
 Thermostat.prototype._setMaxTemp = function() {
-  if(this.powerSave == 'on') {
-    this.maxTemp = 25
-  } else {
-    this.maxTemp = 32
-  }
+  (this.powerSave == 'on') ? this.maxTemp = 25 : this.maxTemp = 32;
 };

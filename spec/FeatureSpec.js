@@ -37,9 +37,16 @@ describe("Thermostat", function() {
 
   it("can reset the temperature to 20", function() {
     thermostat.up(5)
-    thermostat.reset
-
+    thermostat.resetTemp();
+    expect(thermostat.temperature).toEqual(20);
   });
 
+  it("can display information on energy usage", function() {
+    expect(thermostat.energyUsage()).toEqual('medium-usage');
+    thermostat.temperature = 25
+    expect(thermostat.energyUsage()).toEqual('high-usage');
+    thermostat.temperature = 15
+    expect(thermostat.energyUsage()).toEqual('low-usage');
+  });
 });
 
