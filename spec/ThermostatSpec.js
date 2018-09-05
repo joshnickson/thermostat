@@ -7,8 +7,8 @@ describe("Thermostat", function() {
 
   describe("Up", function() {
     it("should increase temperature", function() {
-      thermostat.up(10)
-      expect(thermostat.temperature).toEqual(30)
+      thermostat.up(2)
+      expect(thermostat.temperature).toEqual(22)
     });
   });
 
@@ -19,6 +19,4 @@ describe("Thermostat", function() {
     });
   });
 
-
 });
-
