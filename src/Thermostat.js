@@ -2,7 +2,7 @@
 
 function Thermostat() {
   this.temperature = 20;
-  this.powerSave = 'on';
+  this.powerSave = true;
 };
 
 var powerSave;
@@ -29,5 +29,12 @@ Thermostat.prototype.energyUsage = function() {
 };
 
 Thermostat.prototype._setMaxTemp = function() {
-  (this.powerSave == 'on') ? this.maxTemp = 25 : this.maxTemp = 32;
+  (this.powerSave == true) ? this.maxTemp = 25 : this.maxTemp = 32;
+};
+
+Thermostat.prototype.togglePowerMode = function() {
+  this.power_mode = !this.power_mode
+  if(this.temperature > this.maxTemp) {
+    this.temperature = this.maxTemp;
+  };
 };

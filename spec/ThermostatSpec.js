@@ -50,5 +50,11 @@ describe("Thermostat", function() {
     thermostat.temperature = 15
     expect(thermostat.energyUsage()).toEqual('low-usage');
   });
+
+  it("can toggle power saving mode on and off", function() {
+    expect(thermostat.powerSave == true) 
+    thermostat.togglePowerMode();
+    expect(thermostat.powerSave == false) 
+  });
 });
 
