@@ -16,7 +16,7 @@ Thermostat.prototype.down = function(reduceBy) {
   this.temperature = Math.max(this.temperature - reduceBy, 10)
 };
 
-Thermostat.prototype.resetTemp = function() {
+Thermostat.prototype.reset = function() {
   this.temperature = 20;
 };
 
@@ -33,7 +33,8 @@ Thermostat.prototype._setMaxTemp = function() {
 };
 
 Thermostat.prototype.togglePowerMode = function() {
-  this.power_mode = !this.power_mode
+  this.powerSave = !this.powerSave
+  this._setMaxTemp(powerSave);
   if(this.temperature > this.maxTemp) {
     this.temperature = this.maxTemp;
   };

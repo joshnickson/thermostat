@@ -5,14 +5,16 @@
     <meta charset="utf-8">
       <script src="jquery-3.3.1.js"></script>
       <script src="src/thermostat.js"></script>
+      <script src="thermoController.js"></script>
     <title>Thermostat</title>
   </head>
 
   <body>
     <h1>Thermostat!</h1>
-    <button type="button" id="Up">Up</button><br><br>
-    <button type="button" id="Down">Down</button>
-    <button type="button" id="Reset">Reset</button>
+    <button type="button" id="up">Up</button><br><br>
+      <div id="temperature"></div><br><br>
+    <button type="button" id="down">Down</button>
+    <button type="button" id="reset">Reset</button>
       <label class="switch">
         <input type="checkbox" id="power-save">
         <span class="slider round"></span>
